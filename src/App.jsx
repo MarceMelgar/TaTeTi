@@ -61,6 +61,7 @@ function App() {
   return (
     <main className="board">
       <h1>Tateti</h1> 
+
       <section className="game">
         {
           board.map((_, i) => {
@@ -76,11 +77,16 @@ function App() {
           })
         }
       </section>
-      <section className="turn">
+      
+      <section className="turn">  
+        <h2>Turno: </h2>
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
-      <button onClick={resetGame}>Resetear el juego</button>
+      <section className='btn-reset'>  
+        <button onClick={resetGame}>Resetear el juego</button>
+      </section>
+
       <WinnerModal resetGame={resetGame} winner={winner}/>
     </main>
 
